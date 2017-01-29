@@ -13,13 +13,13 @@
       (if y (str/trim (subs data (count y))))))
 
 (defn null_parser [data]
-   (if   (str/starts-with? data "null") (str/trim (subs data 4))))
+   (if (str/starts-with? data "null") (str/trim (subs data 4))))
 
 (defn colon_parser [data]
-   (if   (str/starts-with? data ":") (str/trim (subs data 1))))
+   (if (str/starts-with? data ":") (str/trim (subs data 1))))
 
 (defn comma_parser [data]
-   (if   (str/starts-with? data ",") (str/trim (subs data 1))))
+   (if (str/starts-with? data ",") (str/trim (subs data 1))))
 
 (defn boolean_parser [data]
    (cond 
