@@ -5,7 +5,7 @@
 (declare object_parser)
 
 (defn string_parser [data]
-   (let [y (re-find #"^\".+\"" data)]
+   (let [y (re-find #"^\".+?\"" data)]
       (if y (str/trim (subs data (count y))))))
 
 (defn num_parser [data]
