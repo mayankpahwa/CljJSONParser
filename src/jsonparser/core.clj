@@ -9,8 +9,8 @@
       (if y (str/trim (subs data (count y))))))
 
 (defn num_parser [data]
-   (let [y (or (re-find #"^\d+\.\d+" data) (re-find #"^-\d+\.\d+" data) (re-find #"^\d+" data) (re-find #"^-\d+" data))]
-      (if y (str/trim (subs data (count y))))))
+   (let [y (re-find #"^[\-]?\d+(\.\d+)?" data)]
+      (if y (str/trim (subs data (count (first y)))))))
 
 (defn null_parser [data]
    (if (str/starts-with? data "null") (str/trim (subs data 4))))
